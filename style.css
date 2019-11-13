@@ -13,7 +13,7 @@ flex-wrap: nowrap;
 }
 
 .question {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Supermercado One', cursive;
   font-size: 2rem;
   text-align: center;
   padding: 4rem 0;
@@ -21,15 +21,25 @@ flex-wrap: nowrap;
 
 .buttons {
   display: inherit;
-    justify-content: center;
+  justify-content: center;
+
 }
 
-/* .next {
-  justify-content: center;
+.btn {
+padding: 2rem;
+margin: 2rem;
+border-radius: 25%;
+font-size: 3rem;
+font-family: 'Supermercado One', cursive;
 }
-.skip {
-  justify-content: center;
-} */
+
+
+.btn:hover {
+  opacity: 0.6;
+}
+
+
+
 
 .footer {
   position: fixed;
