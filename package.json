@@ -1,0 +1,24 @@
+{
+  "name": "week3-ABEH-trialbytrivia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dom.js",
+  "scripts": {
+    "test": "node test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac18/week3-ABEH-trialbytrivia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac18/week3-ABEH-trialbytrivia/issues"
+  },
+  "homepage": "https://github.com/fac18/week3-ABEH-trialbytrivia#readme",
+  "dependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  }
+}
