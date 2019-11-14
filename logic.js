@@ -11,14 +11,21 @@ function createIncrementer () {
      return a++;
  }
 }
-module.exports = createIncrementer();
+
 
 
 // random generator for answers
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
+function shuffleArray(arr) {
+    let newArr = arr;
+    console.log(newArr);
+    for (let i = newArr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+        [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
     }
 }
+
+
+
+module.exports = {createIncrementer, shuffleArray}
+ 

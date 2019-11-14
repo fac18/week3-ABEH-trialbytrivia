@@ -1,6 +1,30 @@
 # week3-ABEH-trialbytrivia
 
-Things we learnt: 
+## Installation manual
+To start the project on your computer, you need to:
+
+Clone the repository:
+
+```
+git clone https://github.com/fac18/week3-ABEH-trialbytrivia.git
+```
+
+Install node dependencies for testing:
+
+npm install
+
+## Objectives
+
+
+## Stretch Goals
+
+## How
+* Mobbing
+* Pair programming
+
+## Things we could improve
+
+## Things we learnt: 
 Fixing encode issues with our API server: Gillian and Ayub found two separate solutions.
 Ayub created a dummy HTML element called text area and then retrieved it back out with the coding corrected.
 
