@@ -69,14 +69,6 @@ background-color: #FFCACA;
   cursor: pointer;
 }
 
-/* #correct:onclick {
-  color: green;
-}
-
-#wrong:onclick {
-  color: red;
-} */
-
 .footer {
   position: fixed;
   left: 0;

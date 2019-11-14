@@ -27,30 +27,17 @@ function storage(data) {
   storageOutput = data
 }
 
-//
-// function testQuiz() {
-//   if ( )
-// }
-
 
 function updateDom(responseQuestions) {
   const currentQ = questionGenerator()
   const incorrect = responseQuestions.results[currentQ].incorrect_answers;
   const question = document.querySelector(".question");
   const answer1 = document.querySelector("#answer1")
-  // answer1.setAttribute("style", "color:green");
-  // answer1.addEventListener('click', testQuiz(bm))
   const answer2 = document.querySelector("#answer2")
-  // answer2.setAttribute("style", "color:red");
-  // answer2.addEventListener('click', testQuiz(bm))
   const answer3 = document.querySelector("#answer3")
-  // answer3.setAttribute("style", "color:red");
-  // answer3.addEventListener('click', testQuiz(bm))
   const answer4 = document.querySelector("#answer4")
-  // answer4.setAttribute("style", "color:red");
-  // answer4.addEventListener('click', testQuiz(bm))
-  const right = document.querySelector(".answers");
-  const wrong = document.querySelector(".wrong");
+  // const right = document.querySelector(".right");
+  // const wrong = document.querySelector(".wrong");
 
 
   question.textContent = atob(responseQuestions.results[currentQ].question);
@@ -78,17 +65,48 @@ function updateDom(responseQuestions) {
   answer3.textContent = shuffledAnswers[2];
   answer4.textContent = shuffledAnswers[3];
 
+answer1.addEventListener('click', function(){
+  if (answer1.textContent == originalFixedAnswers[0]) {
+    answer1.style.backgroundColor = "green";}
+ else {
+  answer1.style.backgroundColor = "red";}
+}
+)
 
-  for (let i = 0; i < shuffledAnswers.length; i++) {
-    if (originalFixedAnswers[0] === shuffledAnswers[i]) {
-      right.addEventListener('click', function(e) {
-        right.style.backgroundColor.onclick = "green";})
-        // console.log(shuffledAnswers[i]);
-    } else {
-      wrong.addEventListener('click', function(e) {
-        wrong.style.backgroundColor.onclick = "red";})
-    };
-  }
+answer2.addEventListener('click', function(){
+  if (answer2.textContent == originalFixedAnswers[0]) {
+    answer2.style.backgroundColor = "green";}
+ else {
+  answer2.style.backgroundColor = "red";}
+}
+)
+
+answer3.addEventListener('click', function(){
+  if (answer3.textContent == originalFixedAnswers[0]) {
+    answer3.style.backgroundColor = "green";}
+ else {
+  answer3.style.backgroundColor = "red";}
+}
+)
+
+answer4.addEventListener('click', function(){
+  if (answer4.textContent == originalFixedAnswers[0]) {
+    answer4.style.backgroundColor = "green";}
+ else {
+  answer4.style.backgroundColor = "red";}
+}
+)
+
+  // for (let i = 0; i < shuffledAnswers.length; i++) {
+  //   if (originalFixedAnswers[0] === shuffledAnswers[i]) {
+  //     right.addEventListener('click', function(e) {
+  //       right.style.backgroundColor = "green";})
+  //       // console.log(shuffledAnswers[i]);
+  //   } else {
+  //     wrong.addEventListener('click', function(e) {
+  //       wrong.style.backgroundColor = "red";})
+  //   };
+  // }
 
 
 
@@ -112,6 +130,7 @@ function updateDom(responseQuestions) {
 const nextB = document.querySelector(".next")
 nextB.addEventListener('click', function() {
   updateDom(storageOutput);
+
 })
 // prev button
 const skipB = document.querySelector(".skip")
