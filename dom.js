@@ -1,12 +1,6 @@
 let storageOutput;
 
-   function createIncrementer () {
-       let a = 1;
-
-    return function addOneTo () {
-        return a++;
-    }
-   }
+   
 
    const questionGenerator = createIncrementer();
    
@@ -44,16 +38,28 @@ function updateDom(responseQuestions){
     const answer3 = document.querySelector("#answer3");
     const answer4 = document.querySelector("#answer4");
     question.textContent  = atob(responseQuestions.results[currentQ].question);
-    console.log(incorrect);
+    // console.log(incorrect);
     const correctAns = responseQuestions.results[currentQ].correct_answer;
-     console.log(correctAns);
-    // const correctAndIncorrectAnswers = [correctAns, ...incorrect];
-    // console.log(correctAndIncorrectAnswers);
-answer1.textContent = atob(incorrect[0]);
-answer2.textContent = atob(incorrect[1]);
-answer3.textContent = atob(incorrect[2]);
-answer4.textContent = atob(correctAns)
+    //  console.log(correctAns);
+     const correctAndIncorrectAnswers = [correctAns, ...incorrect];
+ // at this point the answers are not shuffled, all we want to do is 
+ // decode them, by iterating through
+     let shuffledAnswers =  correctAndIncorrectAnswers.map(answer => { return atob(answer)})
+   // orignal array which we will not change, as we want to compare the first value
+   // to what was clicked in order to check if the right answer was seleted.
+
+ let orginalFixedAnswers = shuffledAnswers.slice(0);
+ 
+ shuffleArray(shuffledAnswers);
+
+ 
+    console.log(shuffledAnswers);
+answer1.textContent = shuffledAnswers[0];
+answer2.textContent = shuffledAnswers[1];
+answer3.textContent = shuffledAnswers[2];
+answer4.textContent = shuffledAnswers[3];
 }
+
 
 
 // next button
@@ -67,4 +73,6 @@ skipB.addEventListener('click',function() {
 updateDom(storageOutput);
 
 })
+
+
 
