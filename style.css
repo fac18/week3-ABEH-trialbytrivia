@@ -41,6 +41,9 @@ border: 3px black solid;
 background-color: #FFCACA;
 }
 
+.btn:hover {
+  opacity: 0.6;
+}
 .answers {
   margin-top: 2rem;
   display: inherit;
@@ -62,9 +65,17 @@ overflow: none;
 background-color: #FFCACA;
 }
 
-.btn:hover {
-  opacity: 0.6;
+.ansbtn:hover {
+  cursor: pointer;
 }
+
+/* #correct:onclick {
+  color: green;
+}
+
+#wrong:onclick {
+  color: red;
+} */
 
 .footer {
   position: fixed;
