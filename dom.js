@@ -1,5 +1,6 @@
 let storageOutput;
-
+let currentQuote;
+let giffySrc;
    
 
    const questionGenerator = createIncrementer();
@@ -7,6 +8,8 @@ let storageOutput;
 (function runAPIs() {
     getQuotes();
 populateQuestion();
+getGifs();
+
 })()
 
    function populateQuestion () {
@@ -77,6 +80,7 @@ answer4.textContent = shuffledAnswers[3];
 const nextB = document.querySelector(".next")
 nextB.addEventListener('click', function(){
 updateDom(storageOutput);
+getQuotes();
 })
 // prev button
 const skipB = document.querySelector(".skip")
@@ -90,20 +94,38 @@ updateDom(storageOutput);
 
 function getQuotes() {
     let quotes;
-    console.log("is unning quotes request")
-    let xhr2 = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     
-let url2 = "https://cors-anywhere.herokuapp.com/https://evilinsult.com/generate_insult.php?lang=en&type=json"
-    xhr2.onreadystatechange = function() {
-        if (xhr2.readyState == 4 && xhr2.status == 200) {
-            quotes = JSON.parse(xhr2.responseText);
-            console.log("quotes ", quotes)
+// let url = "https://cors-anywhere.herokuapp.com/https://evilinsult.com/generate_insult.php?lang=en&type=json"
+let url = "https://evilinsult.com/generate_insult.php?lang=en&type=json"
+xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            quotes = JSON.parse(xhr.responseText);
+            currentQuote = quotes.insult
+            console.log(currentQuote)
         }
-       console.log(xhr2.status)
     };
-    xhr2.open("GET", url2, true);
-    xhr2.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-    xhr2.send();
+    xhr.open("GET", url, true);
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+   xhr.responseType = "text/html";
+    xhr.send();
+
 
 };
 
+function getGifs() {
+    
+    let xhr = new XMLHttpRequest();
+    
+let url = "https://api.giphy.com/v1/gifs/random?api_key=PD4OYNQevsMxvyBSUXjmp2Bmjnwt6fUV&amp;q=puppy&amp;limit=1"
+xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            giffySrc = JSON.parse(xhr.responseText).data.images.downsized_large.url;
+            console.log(giffySrc);
+        }
+    };
+    xhr.open("GET", url, true);
+    xhr.send();
+
+};
