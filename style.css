@@ -1,0 +1,49 @@
+
+body {
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+}
+
+.header {
+  font-family: 'Rye', cursive;
+  font-size: 3rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.question {
+  font-family: 'Supermercado One', cursive;
+  font-size: 2rem;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.buttons {
+  display: inherit;
+  justify-content: center;
+
+}
+
+.btn {
+padding: 2rem;
+margin: 2rem;
+border-radius: 25%;
+font-size: 3rem;
+font-family: 'Supermercado One', cursive;
+}
+
+
+.btn:hover {
+  opacity: 0.6;
+}
+
+
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
