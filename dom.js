@@ -1,10 +1,18 @@
 let storageOutput;
-
+let currentQuote;
+let giffySrc;
    
 
    const questionGenerator = createIncrementer();
    
-   ( function populateQuestion () {
+(function runAPIs() {
+    getQuotes();
+populateQuestion();
+getGifs();
+
+})()
+
+   function populateQuestion () {
     let responseQuestions;
     let xhr = new XMLHttpRequest();
 let url = "https://opentdb.com/api.php?amount=50&category=9&difficulty=medium&type=multiple&encode=base64"
@@ -21,7 +29,7 @@ let url = "https://opentdb.com/api.php?amount=50&category=9&difficulty=medium&ty
     };
     xhr.open("GET", url, true);
     xhr.send();
-})();
+};
 
 function storage(data){
 storageOutput = data
@@ -50,7 +58,12 @@ function updateDom(responseQuestions){
 
  let orginalFixedAnswers = shuffledAnswers.slice(0);
  
+ 
  shuffleArray(shuffledAnswers);
+
+ 
+
+
 
  
  
@@ -67,6 +80,7 @@ answer4.textContent = shuffledAnswers[3];
 const nextB = document.querySelector(".next")
 nextB.addEventListener('click', function(){
 updateDom(storageOutput);
+getQuotes();
 })
 // prev button
 const skipB = document.querySelector(".skip")
@@ -76,4 +90,42 @@ updateDom(storageOutput);
 })
 
 
+// api for evil quotes
 
+function getQuotes() {
+    let quotes;
+    let xhr = new XMLHttpRequest();
+    
+// let url = "https://cors-anywhere.herokuapp.com/https://evilinsult.com/generate_insult.php?lang=en&type=json"
+let url = "https://evilinsult.com/generate_insult.php?lang=en&type=json"
+xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            quotes = JSON.parse(xhr.responseText);
+            currentQuote = quotes.insult
+            console.log(currentQuote)
+        }
+    };
+    xhr.open("GET", url, true);
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+   xhr.responseType = "text/html";
+    xhr.send();
+
+
+};
+
+function getGifs() {
+    
+    let xhr = new XMLHttpRequest();
+    
+let url = "https://api.giphy.com/v1/gifs/random?api_key=PD4OYNQevsMxvyBSUXjmp2Bmjnwt6fUV&amp;q=puppy&amp;limit=1"
+xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            giffySrc = JSON.parse(xhr.responseText).data.images.downsized_large.url;
+            console.log(giffySrc);
+        }
+    };
+    xhr.open("GET", url, true);
+    xhr.send();
+
+};
