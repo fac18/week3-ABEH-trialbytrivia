@@ -1,0 +1,77 @@
+
+
+body {
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+max-height: 100vh;
+background-color: #34414E;
+}
+
+.header {
+  font-family: 'Rye', cursive;
+  font-size: 4rem;
+  text-align: center;
+  padding: 2rem 0;
+  color: white;
+}
+
+.question {
+  font-family: 'Supermercado One', cursive;
+  font-size: 2rem;
+  text-align: center;
+  padding: 4rem 0;
+    color: white;
+}
+
+.buttons {
+  display: inherit;
+  justify-content: center;
+
+}
+
+.btn {
+padding: 1rem;
+margin: 2rem;
+border-radius: 1rem;
+font-size: 1.5rem;
+font-family: 'Supermercado One', cursive;
+outline: none;
+border: 3px black solid;
+}
+
+.answers {
+  margin-top: 2rem;
+  display: inherit;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 60vw;
+}
+
+.ansbtn {
+padding: 0.5rem;
+margin: 0.5rem 5rem;
+border: 3px black solid;
+border-radius: 1rem;
+font-size: 1.5rem;
+font-family: 'Supermercado One', cursive;
+outline: none;
+overflow: none;
+background-color: #D3C2B9;
+}
+
+.btn:hover {
+  opacity: 0.6;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+@-ms-viewport{
+  width: device-width;
+  height: device-height
+}

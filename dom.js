@@ -53,6 +53,7 @@ function updateDom(responseQuestions){
  shuffleArray(shuffledAnswers);
 
  
+ 
     console.log(shuffledAnswers);
 answer1.textContent = shuffledAnswers[0];
 answer2.textContent = shuffledAnswers[1];
