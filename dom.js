@@ -4,7 +4,12 @@ let storageOutput;
 
    const questionGenerator = createIncrementer();
    
-   ( function populateQuestion () {
+(function runAPIs() {
+    getQuotes();
+populateQuestion();
+})()
+
+   function populateQuestion () {
     let responseQuestions;
     let xhr = new XMLHttpRequest();
 let url = "https://opentdb.com/api.php?amount=50&category=9&difficulty=medium&type=multiple&encode=base64"
@@ -21,7 +26,7 @@ let url = "https://opentdb.com/api.php?amount=50&category=9&difficulty=medium&ty
     };
     xhr.open("GET", url, true);
     xhr.send();
-})();
+};
 
 function storage(data){
 storageOutput = data
@@ -50,7 +55,12 @@ function updateDom(responseQuestions){
 
  let orginalFixedAnswers = shuffledAnswers.slice(0);
  
+ 
  shuffleArray(shuffledAnswers);
+
+ 
+
+
 
  
  
@@ -76,4 +86,24 @@ updateDom(storageOutput);
 })
 
 
+// api for evil quotes
+
+function getQuotes() {
+    let quotes;
+    console.log("is unning quotes request")
+    let xhr2 = new XMLHttpRequest();
+    
+let url2 = "https://cors-anywhere.herokuapp.com/https://evilinsult.com/generate_insult.php?lang=en&type=json"
+    xhr2.onreadystatechange = function() {
+        if (xhr2.readyState == 4 && xhr2.status == 200) {
+            quotes = JSON.parse(xhr2.responseText);
+            console.log("quotes ", quotes)
+        }
+       console.log(xhr2.status)
+    };
+    xhr2.open("GET", url2, true);
+    xhr2.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr2.send();
+
+};
 
