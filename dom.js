@@ -99,57 +99,6 @@ function updateDom(responseQuestions) {
     }
   });
 }
-// for (let i = 0; i < shuffledAnswers.length; i++) {
-//   if (originalFixedAnswers[0] === shuffledAnswers[i]) {
-//     right.addEventListener('click', function(e) {
-//       right.style.backgroundColor = "green";})
-//       // console.log(shuffledAnswers[i]);
-//   } else {
-//     wrong.addEventListener('click', function(e) {
-//       wrong.style.backgroundColor = "red";})
-//   };
-// }
-
-function updateDom(responseQuestions) {
-  const currentQ = questionGenerator();
-  const incorrect = responseQuestions.results[currentQ].incorrect_answers;
-  const question = document.querySelector(".question");
-  const answer1 = document.querySelector("#answer1");
-  const answer2 = document.querySelector("#answer2");
-  const answer3 = document.querySelector("#answer3");
-  const answer4 = document.querySelector("#answer4");
-  question.textContent = atob(responseQuestions.results[currentQ].question);
-  // console.log(incorrect);
-  const correctAns = responseQuestions.results[currentQ].correct_answer;
-  //  console.log(correctAns);
-  const correctAndIncorrectAnswers = [correctAns, ...incorrect];
-  // at this point the answers are not shuffled, all we want to do is
-  // decode them, by iterating through
-  let shuffledAnswers = correctAndIncorrectAnswers.map(answer => {
-    return atob(answer);
-  });
-  // orignal array which we will not change, as we want to compare the first value
-  // to what was clicked in order to check if the right answer was seleted.
-
-  let orginalFixedAnswers = shuffledAnswers.slice(0);
-
-  shuffleArray(shuffledAnswers);
-
-  console.log(shuffledAnswers);
-  answer1.textContent = shuffledAnswers[0];
-  answer2.textContent = shuffledAnswers[1];
-  answer3.textContent = shuffledAnswers[2];
-  answer4.textContent = shuffledAnswers[3];
-}
-
-// function checkAns(button) {
-//   if (correctAns === button.textContent) {
-// button.style.backgroundColor = "green";
-//   }
-//   else {
-//     button.style.backgroundColor = "red";
-//   }
-// };
 
 // next button
 const nextB = document.querySelector(".next");
