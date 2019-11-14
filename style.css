@@ -5,7 +5,7 @@ display: flex;
 flex-direction: column;
 flex-wrap: nowrap;
 max-height: 100vh;
-background-color: #34414E;
+background-color: #F9D68B;
 }
 
 .header {
@@ -13,7 +13,7 @@ background-color: #34414E;
   font-size: 4rem;
   text-align: center;
   padding: 2rem 0;
-  color: white;
+  color: #E86884;
 }
 
 .question {
@@ -21,7 +21,7 @@ background-color: #34414E;
   font-size: 2rem;
   text-align: center;
   padding: 4rem 0;
-    color: white;
+    color: #E86884;
 }
 
 .buttons {
@@ -38,6 +38,7 @@ font-size: 1.5rem;
 font-family: 'Supermercado One', cursive;
 outline: none;
 border: 3px black solid;
+background-color: #FFCACA;
 }
 
 .answers {
@@ -46,6 +47,7 @@ border: 3px black solid;
   flex-direction: column;
   justify-content: center;
   min-width: 60vw;
+
 }
 
 .ansbtn {
@@ -57,7 +59,7 @@ font-size: 1.5rem;
 font-family: 'Supermercado One', cursive;
 outline: none;
 overflow: none;
-background-color: #D3C2B9;
+background-color: #FFCACA;
 }
 
 .btn:hover {
