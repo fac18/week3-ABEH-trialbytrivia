@@ -104,13 +104,20 @@ function updateDom(responseQuestions) {
 const nextB = document.querySelector(".next");
 nextB.addEventListener("click", function() {
   updateDom(storageOutput);
+
+  const answer1 = document.querySelector("#answer1");
+  const answer2 = document.querySelector("#answer2");
+  const answer3 = document.querySelector("#answer3");
+  const answer4 = document.querySelector("#answer4");
+
+answer1.style.backgroundColor = "#FFCACA";
+answer2.style.backgroundColor = "#FFCACA";
+answer3.style.backgroundColor = "#FFCACA";
+answer4.style.backgroundColor = "#FFCACA";
+
   getQuotes();
 });
-// prev button
-const skipB = document.querySelector(".skip");
-skipB.addEventListener("click", function() {
-  updateDom(storageOutput);
-});
+
 
 // api for evil quotes
 
