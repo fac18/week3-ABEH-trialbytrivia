@@ -72,10 +72,10 @@ function updateDom(responseQuestions) {
     answer4.style.pointerEvents = "none";
 
     if (answer1.textContent == originalFixedAnswers[0]) {
-      answer1.style.backgroundColor = "green";
+      answer1.style.backgroundColor = "#58AD58";
       question.textContent = "";
     } else {
-      answer1.style.backgroundColor = "red";
+      answer1.style.backgroundColor = "#B93D41";
       question.textContent = currentQuote;
       question.classList.add("insult");
     }
@@ -87,10 +87,10 @@ function updateDom(responseQuestions) {
     answer4.style.pointerEvents = "none";
 
     if (answer2.textContent == originalFixedAnswers[0]) {
-      answer2.style.backgroundColor = "green";
+      answer2.style.backgroundColor = "#58AD58";
       question.textContent = "";
     } else {
-      answer2.style.backgroundColor = "red";
+      answer2.style.backgroundColor = "#B93D41";
       question.textContent = currentQuote;
       question.classList.add("insult");
     }
@@ -102,10 +102,10 @@ function updateDom(responseQuestions) {
     answer4.style.pointerEvents = "none";
 
     if (answer3.textContent == originalFixedAnswers[0]) {
-      answer3.style.backgroundColor = "green";
+      answer3.style.backgroundColor = "#58AD58";
       question.textContent = "";
     } else {
-      answer3.style.backgroundColor = "red";
+      answer3.style.backgroundColor = "#B93D41";
       question.textContent = currentQuote;
       question.classList.add("insult");
     }
@@ -117,10 +117,10 @@ function updateDom(responseQuestions) {
     answer3.style.pointerEvents = "none";
 
     if (answer4.textContent == originalFixedAnswers[0]) {
-      answer4.style.backgroundColor = "green";
+      answer4.style.backgroundColor = "#58AD58";
       question.textContent = "";
     } else {
-      answer4.style.backgroundColor = "red";
+      answer4.style.backgroundColor = "#B93D41";
       question.textContent = currentQuote;
       question.classList.add("insult");
     }
@@ -141,7 +141,7 @@ nextB.addEventListener("click", function() {
   answer3.style.pointerEvents = "auto";
   answer4.style.pointerEvents = "auto";
   question.classList.remove("insult");
-  
+
   getQuotes();
   getGifs();
 });
