@@ -107,7 +107,7 @@ function updateDom(responseQuestions) {
   });
 
   answer3.addEventListener("click", function() {
-    
+
     answer1.style.pointerEvents = "none";
     answer2.style.pointerEvents = "none";
     answer4.style.pointerEvents = "none";
@@ -165,7 +165,7 @@ nextB.addEventListener("click", function() {
   answer3.style.pointerEvents = "auto";
   answer4.style.pointerEvents = "auto";
   question.classList.remove("insult");
-  score++;
+
 
   updateDom(storageOutput);
   getQuotes();
@@ -187,10 +187,10 @@ function getQuotes() {
       quotes = JSON.parse(xhr.responseText);
       currentQuote = quotes.insult;
     }
-  
-  
-  
-  
+
+
+
+
   };
   xhr.open("GET", url, true);
   xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
