@@ -72,6 +72,12 @@ body {
   width: 100%;
 }
 
+.insult {
+  color: black;
+  font-size: 40px;
+  text-shadow: 2px 2px #e86884;
+}
+
 @-ms-viewport {
   width: device-width;
   height: device-height;

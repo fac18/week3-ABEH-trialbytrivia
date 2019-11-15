@@ -141,7 +141,7 @@ nextB.addEventListener("click", function() {
   answer3.style.pointerEvents = "auto";
   answer4.style.pointerEvents = "auto";
   question.classList.remove("insult");
-
+  
   getQuotes();
   getGifs();
 });
@@ -158,7 +158,9 @@ function getQuotes() {
     if (xhr.readyState == 4 && xhr.status == 200) {
       quotes = JSON.parse(xhr.responseText);
       currentQuote = quotes.insult;
+
       console.log(currentQuote);
+
     }
   };
   xhr.open("GET", url, true);
