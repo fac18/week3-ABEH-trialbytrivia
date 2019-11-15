@@ -131,6 +131,7 @@ function updateDom(responseQuestions) {
 const nextB = document.querySelector(".next");
 nextB.addEventListener("click", function() {
   updateDom(storageOutput);
+
   answer1.style.backgroundColor = "#ffcaca";
   answer2.style.backgroundColor = "#ffcaca";
   answer3.style.backgroundColor = "#ffcaca";
@@ -140,13 +141,9 @@ nextB.addEventListener("click", function() {
   answer3.style.pointerEvents = "auto";
   answer4.style.pointerEvents = "auto";
   question.classList.remove("insult");
+
   getQuotes();
   getGifs();
-});
-// prev button
-const skipB = document.querySelector(".skip");
-skipB.addEventListener("click", function() {
-  updateDom(storageOutput);
 });
 
 // api for evil quotes

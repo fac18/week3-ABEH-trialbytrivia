@@ -13,16 +13,30 @@ Install node dependencies for testing:
 
 npm install
 
+NB there may be a CORS request problem related to the insult generator API.  This can be solved by using the 'Allow CORS: Access-Control-Allow-Origin'chrome plugin (and make sure it is on!)
+
 ## Objectives
+
+* Practise making API requests
+* Practise DOM manipulation
+* Plan (and build!) a project's architecture
 
 
 ## Stretch Goals
 
+Add score counter
+
 ## How
+
+Spent one hour looking at a  list of free APIs and 
+
 * Mobbing
 * Pair programming
 
+
 ## Things we could improve
+Adding the score function
+Better fix for CORS issue
 
 ## Things we learnt: 
 Fixing encode issues with our API server: Gillian and Ayub found two separate solutions.
