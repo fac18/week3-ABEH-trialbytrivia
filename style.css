@@ -1,44 +1,41 @@
-
-
 body {
-display: flex;
-flex-direction: column;
-flex-wrap: nowrap;
-max-height: 100vh;
-background-color: #F9D68B;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  max-height: 100vh;
+  background-color: #f9d68b;
 }
 
 .header {
-  font-family: 'Rye', cursive;
+  font-family: "Rye", cursive;
   font-size: 4rem;
   text-align: center;
   padding: 2rem 0;
-  color: #E86884;
+  color: #e86884;
 }
 
 .question {
-  font-family: 'Supermercado One', cursive;
+  font-family: "Supermercado One", cursive;
   font-size: 2rem;
   text-align: center;
   padding: 4rem 0;
-    color: #E86884;
+  color: #e86884;
 }
 
 .buttons {
   display: inherit;
   justify-content: center;
-
 }
 
 .btn {
-padding: 1rem;
-margin: 2rem;
-border-radius: 1rem;
-font-size: 1.5rem;
-font-family: 'Supermercado One', cursive;
-outline: none;
-border: 3px black solid;
-background-color: #FFCACA;
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-family: "Supermercado One", cursive;
+  outline: none;
+  border: 3px black solid;
+  background-color: #ffcaca;
 }
 
 .btn:hover {
@@ -50,19 +47,18 @@ background-color: #FFCACA;
   flex-direction: column;
   justify-content: center;
   min-width: 60vw;
-
 }
 
 .ansbtn {
-padding: 0.5rem;
-margin: 0.5rem 5rem;
-border: 3px black solid;
-border-radius: 1rem;
-font-size: 1.5rem;
-font-family: 'Supermercado One', cursive;
-outline: none;
-overflow: none;
-background-color: #FFCACA;
+  padding: 0.5rem;
+  margin: 0.5rem 5rem;
+  border: 3px black solid;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-family: "Supermercado One", cursive;
+  outline: none;
+  overflow: none;
+  background-color: #ffcaca;
 }
 
 .ansbtn:hover {
@@ -76,7 +72,7 @@ background-color: #FFCACA;
   width: 100%;
 }
 
-@-ms-viewport{
+@-ms-viewport {
   width: device-width;
-  height: device-height
+  height: device-height;
 }

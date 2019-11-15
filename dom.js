@@ -58,7 +58,6 @@ function updateDom(responseQuestions) {
 
   let originalFixedAnswers = shuffledAnswers.slice(0);
   // correctAns = originalFixedAnswers[0]
-  console.log(originalFixedAnswers);
 
   shuffleArray(shuffledAnswers);
 
@@ -68,34 +67,62 @@ function updateDom(responseQuestions) {
   answer4.textContent = shuffledAnswers[3];
 
   answer1.addEventListener("click", function() {
+    answer2.style.pointerEvents = "none";
+    answer3.style.pointerEvents = "none";
+    answer4.style.pointerEvents = "none";
+
     if (answer1.textContent == originalFixedAnswers[0]) {
       answer1.style.backgroundColor = "green";
+      question.textContent = "";
     } else {
       answer1.style.backgroundColor = "red";
+      question.textContent = currentQuote;
+      question.classList.add("insult");
     }
   });
 
   answer2.addEventListener("click", function() {
+    answer1.style.pointerEvents = "none";
+    answer3.style.pointerEvents = "none";
+    answer4.style.pointerEvents = "none";
+
     if (answer2.textContent == originalFixedAnswers[0]) {
       answer2.style.backgroundColor = "green";
+      question.textContent = "";
     } else {
       answer2.style.backgroundColor = "red";
+      question.textContent = currentQuote;
+      question.classList.add("insult");
     }
   });
 
   answer3.addEventListener("click", function() {
+    answer1.style.pointerEvents = "none";
+    answer2.style.pointerEvents = "none";
+    answer4.style.pointerEvents = "none";
+
     if (answer3.textContent == originalFixedAnswers[0]) {
       answer3.style.backgroundColor = "green";
+      question.textContent = "";
     } else {
       answer3.style.backgroundColor = "red";
+      question.textContent = currentQuote;
+      question.classList.add("insult");
     }
   });
 
   answer4.addEventListener("click", function() {
+    answer1.style.pointerEvents = "none";
+    answer2.style.pointerEvents = "none";
+    answer3.style.pointerEvents = "none";
+
     if (answer4.textContent == originalFixedAnswers[0]) {
       answer4.style.backgroundColor = "green";
+      question.textContent = "";
     } else {
       answer4.style.backgroundColor = "red";
+      question.textContent = currentQuote;
+      question.classList.add("insult");
     }
   });
 }
@@ -105,19 +132,19 @@ const nextB = document.querySelector(".next");
 nextB.addEventListener("click", function() {
   updateDom(storageOutput);
 
-  const answer1 = document.querySelector("#answer1");
-  const answer2 = document.querySelector("#answer2");
-  const answer3 = document.querySelector("#answer3");
-  const answer4 = document.querySelector("#answer4");
-
-answer1.style.backgroundColor = "#FFCACA";
-answer2.style.backgroundColor = "#FFCACA";
-answer3.style.backgroundColor = "#FFCACA";
-answer4.style.backgroundColor = "#FFCACA";
+  answer1.style.backgroundColor = "#ffcaca";
+  answer2.style.backgroundColor = "#ffcaca";
+  answer3.style.backgroundColor = "#ffcaca";
+  answer4.style.backgroundColor = "#ffcaca";
+  answer1.style.pointerEvents = "auto";
+  answer2.style.pointerEvents = "auto";
+  answer3.style.pointerEvents = "auto";
+  answer4.style.pointerEvents = "auto";
+  question.classList.remove("insult");
 
   getQuotes();
+  getGifs();
 });
-
 
 // api for evil quotes
 
@@ -145,7 +172,7 @@ function getGifs() {
   let xhr = new XMLHttpRequest();
 
   let url =
-    "https://api.giphy.com/v1/gifs/random?api_key=PD4OYNQevsMxvyBSUXjmp2Bmjnwt6fUV&amp;q=puppy&amp;limit=1";
+    "https://api.giphy.com/v1/gifs/random?api_key=PD4OYNQevsMxvyBSUXjmp2Bmjnwt6fUV&tag=happy";
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
       giffySrc = JSON.parse(xhr.responseText).data.images.downsized_large.url;
