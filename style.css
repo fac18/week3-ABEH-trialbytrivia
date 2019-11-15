@@ -3,7 +3,7 @@ body {
   flex-direction: column;
   flex-wrap: nowrap;
   max-height: 100vh;
-  background-color: #f9d68b;
+  background-color: #FFDD6D;
 }
 
 .header {
@@ -11,7 +11,7 @@ body {
   font-size: 4rem;
   text-align: center;
   padding: 2rem 0;
-  color: #e86884;
+  color: #C4526B;
 }
 
 .question {
@@ -19,7 +19,7 @@ body {
   font-size: 2rem;
   text-align: center;
   padding: 4rem 0;
-  color: #e86884;
+  color: #C4526B;
 }
 
 .gif {
@@ -80,6 +80,12 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
+}
+
+.insult {
+  color: black;
+  font-size: 40px;
+  text-shadow: 2px 2px #C4526B;
 }
 
 @-ms-viewport {
