@@ -1,6 +1,7 @@
 let storageOutput;
 let currentQuote;
 let giffySrc;
+let score = document.querySelector(".total")
 
 const questionGenerator = createIncrementer();
 
@@ -40,11 +41,14 @@ function updateDom(responseQuestions) {
   const answer2 = document.querySelector("#answer2");
   const answer3 = document.querySelector("#answer3");
   const answer4 = document.querySelector("#answer4");
+
+  
   // const right = document.querySelector(".right");
   // const wrong = document.querySelector(".wrong");
 
   question.textContent = atob(responseQuestions.results[currentQ].question);
-  // console.log(incorrect);
+
+  
   const correctAns = responseQuestions.results[currentQ].correct_answer;
   //  console.log(correctAns);
   const correctAndIncorrectAnswers = [correctAns, ...incorrect];
@@ -72,6 +76,7 @@ function updateDom(responseQuestions) {
     answer4.style.pointerEvents = "none";
 
     if (answer1.textContent == originalFixedAnswers[0]) {
+      score.textContent++
       answer1.style.backgroundColor = "green";
       question.textContent = "";
     } else {
@@ -83,10 +88,11 @@ function updateDom(responseQuestions) {
 
   answer2.addEventListener("click", function() {
     answer1.style.pointerEvents = "none";
-    answer3.style.pointerEvents = "none";
+     answer3.style.pointerEvents = "none";
     answer4.style.pointerEvents = "none";
 
     if (answer2.textContent == originalFixedAnswers[0]) {
+      score.textContent++
       answer2.style.backgroundColor = "green";
       question.textContent = "";
     } else {
@@ -97,11 +103,13 @@ function updateDom(responseQuestions) {
   });
 
   answer3.addEventListener("click", function() {
+    
     answer1.style.pointerEvents = "none";
     answer2.style.pointerEvents = "none";
     answer4.style.pointerEvents = "none";
 
     if (answer3.textContent == originalFixedAnswers[0]) {
+      score.textContent++
       answer3.style.backgroundColor = "green";
       question.textContent = "";
     } else {
@@ -117,6 +125,7 @@ function updateDom(responseQuestions) {
     answer3.style.pointerEvents = "none";
 
     if (answer4.textContent == originalFixedAnswers[0]) {
+      score.textContent++
       answer4.style.backgroundColor = "green";
       question.textContent = "";
     } else {
@@ -141,10 +150,13 @@ nextB.addEventListener("click", function() {
   answer3.style.pointerEvents = "auto";
   answer4.style.pointerEvents = "auto";
   question.classList.remove("insult");
+  score++;
 
   getQuotes();
   getGifs();
 });
+
+
 
 // api for evil quotes
 
@@ -160,6 +172,10 @@ function getQuotes() {
       currentQuote = quotes.insult;
       console.log(currentQuote);
     }
+  
+  
+  
+  
   };
   xhr.open("GET", url, true);
   xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");

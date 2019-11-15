@@ -65,6 +65,28 @@ body {
   cursor: pointer;
 }
 
+
+.score-container {
+  background-color: #cccbbc; 
+  padding: 0 2rem;
+  
+}
+
+.score-title {
+  font-family: "Supermercado One", cursive;
+  font-size: 2rem;
+  margin-left: 5rem;
+  color: #e86884;
+}
+
+.total {
+  font-family: "Supermercado One", cursive;
+  font-size: 2rem;
+  margin-left: 5rem;
+  color: #e86884;
+  margin-bottom: 0;
+}
+
 .footer {
   position: fixed;
   left: 0;
