@@ -28,14 +28,15 @@ Add score counter
 
 ## How
 
-Spent one hour looking at a  list of free APIs and 
+We spent an hour or so on the first day looking through a list of available APIs for inspiration. We came to a consensus on a trivia based game that would reward the user with a gif for the correct answer or show a random insult if they got it wrong. 
 
 * Mobbing
-* Pair programming
+On the first day we also mobbed the basic structure of our HTML page and divided out tasks.
 
+* Pair programming
+We then split into pairs and tackled tasks.
 
 ## Things we could improve
-Adding the score function
 Better fix for CORS issue
 
 ## Things we learnt: 

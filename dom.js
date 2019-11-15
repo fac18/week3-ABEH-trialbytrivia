@@ -3,6 +3,7 @@ let questionsArray;
 let currentQuote;
 let giffySrc;
 let currentAns;
+let score = document.querySelector(".total");
 
 const questionGenerator = createIncrementer();
 
@@ -29,6 +30,7 @@ function buttonClick(event) {
   });
 
   if (event.target.textContent == currentAns) {
+    score.textContent++;
     event.target.style.backgroundColor = "#58AD58";
     question.textContent = "";
     let gif = document.createElement("img");
