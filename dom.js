@@ -19,7 +19,6 @@ function populateQuestion() {
     if (xhr.readyState == 4 && xhr.status == 200) {
       responseQuestions = JSON.parse(xhr.responseText);
       storage(responseQuestions);
-      console.log(responseQuestions);
 
       updateDom(responseQuestions);
     }
@@ -40,13 +39,10 @@ function updateDom(responseQuestions) {
   const answer2 = document.querySelector("#answer2");
   const answer3 = document.querySelector("#answer3");
   const answer4 = document.querySelector("#answer4");
-  // const right = document.querySelector(".right");
-  // const wrong = document.querySelector(".wrong");
 
   question.textContent = atob(responseQuestions.results[currentQ].question);
-  // console.log(incorrect);
+
   const correctAns = responseQuestions.results[currentQ].correct_answer;
-  //  console.log(correctAns);
   const correctAndIncorrectAnswers = [correctAns, ...incorrect];
   // at this point the answers are not shuffled, all we want to do is
   // decode them, by iterating through
@@ -74,10 +70,16 @@ function updateDom(responseQuestions) {
     if (answer1.textContent == originalFixedAnswers[0]) {
       answer1.style.backgroundColor = "#58AD58";
       question.textContent = "";
+      let gif = document.createElement("img");
+      gif.src = giffySrc;
+      question.appendChild(gif);
+      question.classList.add("gif");
     } else {
       answer1.style.backgroundColor = "#B93D41";
+      question.classList.remove("gif");
       question.textContent = currentQuote;
       question.classList.add("insult");
+
     }
   });
 
@@ -89,8 +91,13 @@ function updateDom(responseQuestions) {
     if (answer2.textContent == originalFixedAnswers[0]) {
       answer2.style.backgroundColor = "#58AD58";
       question.textContent = "";
+      let gif = document.createElement("img");
+      gif.src = giffySrc;
+      question.appendChild(gif);
+      question.classList.add("gif");
     } else {
       answer2.style.backgroundColor = "#B93D41";
+      question.classList.remove("gif");
       question.textContent = currentQuote;
       question.classList.add("insult");
     }
@@ -104,10 +111,16 @@ function updateDom(responseQuestions) {
     if (answer3.textContent == originalFixedAnswers[0]) {
       answer3.style.backgroundColor = "#58AD58";
       question.textContent = "";
+      let gif = document.createElement("img");
+      gif.src = giffySrc;
+      question.appendChild(gif);
+      question.classList.add("gif");
     } else {
       answer3.style.backgroundColor = "#B93D41";
       question.textContent = currentQuote;
+      question.classList.remove("gif");
       question.classList.add("insult");
+      question.classList.add("gif");
     }
   });
 
@@ -119,8 +132,13 @@ function updateDom(responseQuestions) {
     if (answer4.textContent == originalFixedAnswers[0]) {
       answer4.style.backgroundColor = "#58AD58";
       question.textContent = "";
+      let gif = document.createElement("img");
+      gif.src = giffySrc;
+      question.appendChild(gif);
+      question.classList.add("gif");
     } else {
       answer4.style.backgroundColor = "#B93D41";
+      question.classList.remove("gif");
       question.textContent = currentQuote;
       question.classList.add("insult");
     }
@@ -130,8 +148,8 @@ function updateDom(responseQuestions) {
 // next button
 const nextB = document.querySelector(".next");
 nextB.addEventListener("click", function() {
-  updateDom(storageOutput);
-
+  const question = document.querySelector(".question");
+  question.classList.remove("gif");
   answer1.style.backgroundColor = "#ffcaca";
   answer2.style.backgroundColor = "#ffcaca";
   answer3.style.backgroundColor = "#ffcaca";
@@ -141,7 +159,7 @@ nextB.addEventListener("click", function() {
   answer3.style.pointerEvents = "auto";
   answer4.style.pointerEvents = "auto";
   question.classList.remove("insult");
-
+  updateDom(storageOutput);
   getQuotes();
   getGifs();
 });
@@ -158,9 +176,6 @@ function getQuotes() {
     if (xhr.readyState == 4 && xhr.status == 200) {
       quotes = JSON.parse(xhr.responseText);
       currentQuote = quotes.insult;
-
-      console.log(currentQuote);
-
     }
   };
   xhr.open("GET", url, true);
@@ -178,7 +193,6 @@ function getGifs() {
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4 && xhr.status == 200) {
       giffySrc = JSON.parse(xhr.responseText).data.images.downsized_large.url;
-      console.log(giffySrc);
     }
   };
   xhr.open("GET", url, true);

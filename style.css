@@ -22,6 +22,16 @@ body {
   color: #C4526B;
 }
 
+.gif {
+  padding: 0;
+}
+
+.gif img {
+  max-height: 180px;
+  margin: 0;
+  padding: 0;
+}
+
 .buttons {
   display: inherit;
   justify-content: center;
